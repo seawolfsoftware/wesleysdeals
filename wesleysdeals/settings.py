@@ -40,7 +40,17 @@ INSTALLED_APPS = [
 
     # local
     'posts',
+
+    # 3rd party apps
+    'rest_framework',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
