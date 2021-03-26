@@ -1,0 +1,34 @@
+#header {
+    background: #D15700;
+    color: #ffff;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+#branding h1 {
+    color: #ffff;
+}
+
+.module h2, .module caption, .inline-group h2 {
+    margin: 0;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: left;
+    background: #5A9875;
+    color: #fff;
+}
+
+div.breadcrumbs {
+    background: #5A9875;
+    padding: 10px 40px;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: #5A9875;
+    }
