@@ -37,9 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
 
     # local
+    'accounts',
     'posts',
+    'register',
 
     # 3rd party apps
     'rest_framework',
@@ -51,6 +54,7 @@ REST_FRAMEWORK = {
     ]
 }
 
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
