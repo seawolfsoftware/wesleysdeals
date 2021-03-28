@@ -8,7 +8,10 @@ def home(response):
 
     posts = Post.objects.all()
 
-    return render(response, "main/home.html", {'posts': posts})
+    if posts:
+        return render(response, "main/home.html", {'posts': posts})
+    else:
+        return render(response, "main/home.html")
 
 
 def register(response):

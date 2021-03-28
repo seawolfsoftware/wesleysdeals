@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block head %}
+    <title>Deal Details</title>
+{% endblock %}
+
+
+{% block body %}
+
+    <h1 class="title">{{ post.title}}</h1>
+
+    <small>Posted at {{ post.created_at}}</small>
+
+    <p>{{ post.body }}</p>
+
+
+{% endblock %}
