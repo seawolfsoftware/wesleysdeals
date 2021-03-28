@@ -1,9 +1,14 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
 
+from posts.models import Post
+
 
 def home(response):
-    return render(response, "main/home.html", {})
+
+    posts = Post.objects.all()
+
+    return render(response, "main/home.html", {'posts': posts})
 
 
 def register(response):

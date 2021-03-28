@@ -9,6 +9,8 @@
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
           crossorigin="anonymous">
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
         {% block head %}
             <meta charset="UTF-8">
             <title>Wesley's Red Hot Deals & Steals</title>
@@ -18,8 +20,21 @@
 
     <body>
 
-        {% block body %}
-        {% endblock %}
+        <nav class="navbar is-info">
+            <div class="navbar-brand">
+                <a href="/" class="navbar-item"><strong>Wesley's Red Hot Deals & Steals</strong></a>
+            </div>
+        </nav>
+
+        <section class="section">
+            <div class="container">
+                {% block body %}
+                {% endblock %}
+            </div>
+
+        </section>
+
+
 
     </body>
 </html>

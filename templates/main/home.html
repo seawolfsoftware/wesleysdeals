@@ -3,3 +3,20 @@
 {% block head %}
     <title>Home</title>
 {% endblock %}
+
+
+{% block body %}
+
+    {% for post in posts %}
+
+        <div class="post block">
+            <h2 class="subtitle">{{ post.title }}</h2>
+
+            <small>Posted at {{ post.created_at}}</small>
+
+            <p>{{ post.body }}</p>
+        </div>
+
+    {% endfor %}
+
+{% endblock %}
