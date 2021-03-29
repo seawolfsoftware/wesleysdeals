@@ -11,6 +11,9 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+
         {% block head %}
             <meta charset="UTF-8">
             <title>Wesley's Red Hot Deals & Steals</title>
@@ -20,7 +23,7 @@
 
     <body>
 
-        <nav class="navbar is-info">
+        <nav id="custom_navbar" class="navbar is-info">
             <div class="navbar-brand">
                 <a href="/" class="navbar-item"><strong>Wesley's Red Hot Deals & Steals</strong></a>
             </div>
