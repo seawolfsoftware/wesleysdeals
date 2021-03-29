@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+
+{% block head %}
+    <title>Home</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+
+{% block body %}
+
+
+        <div id="post_container" class="container">
+            {% for post in posts %}
+            <div class="row">
+                <div class="post block">
+                    <a href="{% url 'PostDetail' post.pk %}">
+                        <h2 id="post_title"
+                            class="subtitle">{{ post.title }}</h2>
+                    </a>
+
+
+                    <div id="created_at">Posted at {{ post.created_at}}</div>
+
+                    <p id="post_body"> {{ post.body }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+
+
+{% endblock %}

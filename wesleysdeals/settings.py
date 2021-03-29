@@ -25,9 +25,10 @@ SECRET_KEY = 'iodlrzlck5wqyj&l6hr1z@$hqbs@9^05qzm70y0s)dt0dnwr*y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
-
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,9 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
 
     # local
     'posts',
+    'register',
 
     # 3rd party apps
     'rest_framework',
@@ -51,6 +54,7 @@ REST_FRAMEWORK = {
     ]
 }
 
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
