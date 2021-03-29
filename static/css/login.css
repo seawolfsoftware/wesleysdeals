@@ -1,0 +1,15 @@
+.login #container {
+    border-radius: 10px !important;
+}
+
+.login .submit-row {
+    padding: 0px !important;
+}
+
+.login #header {
+    height: auto;
+    padding: 8px !important;
+
+
+}
+
