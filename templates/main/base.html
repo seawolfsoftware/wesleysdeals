@@ -22,22 +22,55 @@
 
 
     <body>
+        <div id="page-container">
+            <div id="content-wrap">
 
-        <nav id="custom_navbar" class="navbar is-info">
-            <div class="navbar-brand">
-                <a href="/" class="navbar-item"><strong>Wesley's Red Hot Deals & Steals</strong></a>
+                <nav id="custom_navbar" class="navbar is-info">
+                    <div class="navbar-brand">
+                        <a href="/" class="navbar-item"><strong>Wesley's Red Hot Deals & Steals</strong></a>
+                    </div>
+                </nav>
+
+                <section class="section">
+                    <div class="container">
+                        {% block body %}
+                        {% endblock %}
+                    </div>
+                </section>
             </div>
-        </nav>
-
-        <section class="section">
-            <div class="container">
-                {% block body %}
-                {% endblock %}
+    <footer id="footer" class="container">
+        <div class="row">
+            <div class="row">
+                <p>
+                    We are a participant in the Amazon Services LLC Associates Program,
+                    an affiliate advertising program designed to provide a means for
+                    us to earn fees by linking to Amazon.com and affiliated sites.
+                </p>
             </div>
 
-        </section>
+            <div class="row">
+                <p>
+                    Product prices and availability are accurate as of the date/time
+                    indicated and are subject to change. Any price and availability
+                    information displayed on Wesley's Amazon Deals & Steals , at the
+                    time of purchase will apply to the purchase of this product.
+                    PRICES ARE SUBJECT TO CHANGE, DISCOUNT CODES ARE SUBJECT TO
+                    EXPIRATION, LIMITED QTY, CERTAIN RESTRICTIONS MAY APPLY."
+                </p>
+            </div>
 
+            <div class="row">
+                <p>
+                    The viewpoints or opinions expressed on this page are that
+                    of my own & not of Amazon.com, or any related affiliates.
+                </p>
+            </div>
 
+        </div>
+    </footer>
 
+        </div>
     </body>
+
+
 </html>
