@@ -1,19 +1,31 @@
 {% extends "main/base.html" %}
 
-{% block title %}
-	Create an Account
+
+{% block head %}
+    <title>Register</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
 {% endblock %}
+
+
 
 {% load crispy_forms_tags %}
 
 {% block body %}
-	<div class="container">
-		<h1>Register</h1>
+	<div id="register-container" class="container">
+
+
+		<h1 id="register">Register</h1>
+
+
 		<form method="POST" class="form-group">
 		{% csrf_token %}
 		{{ form|crispy }}
-		<button type="submit" class="btn btn-primary">Register</button>
+		<button type="submit" class="btn btn-outline-success">Register</button>
 		</form>
+
+		<p>Have an account? Log in <a id="login-link" href="/login">here</a>.</p>
 	</div>
 
 {% endblock %}

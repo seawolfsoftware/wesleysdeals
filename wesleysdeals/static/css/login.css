@@ -1,5 +1,17 @@
+@media screen and (max-width: 500px) {
+
+
+    #form-container {
+        width: 90%;
+    }
+
+}
+
+
+
 .login #container {
     border-radius: 10px !important;
+
 }
 
 .login .submit-row {
@@ -10,6 +22,21 @@
     height: auto;
     padding: 8px !important;
 
-
 }
 
+#headline {
+    font-size: 45px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+#missing-account {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#register-link {
+    color: #D15700;
+    font-weight: 700;
+}
