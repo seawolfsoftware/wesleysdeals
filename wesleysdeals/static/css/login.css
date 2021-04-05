@@ -1,5 +1,8 @@
+
+
 .login #container {
     border-radius: 10px !important;
+
 }
 
 .login .submit-row {
@@ -10,6 +13,30 @@
     height: auto;
     padding: 8px !important;
 
-
 }
 
+#headline {
+    font-size: 45px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    text-align: left;
+    margin-bottom: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#missing-account {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#register-link {
+    color: #D15700;
+    font-weight: 700;
+}
+
+#form-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

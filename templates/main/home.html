@@ -10,22 +10,62 @@
 
 {% block body %}
 
+        <h1 id="headline">Latest Deals & Steals!</h1>
 
-        <div id="post_container" class="container">
+        <div class="container">
             {% for post in posts %}
-            <div class="row">
-                <div class="post block">
+            <div id="post-row" class="row">
+                <div class="post block col-sm">
                     <a href="{% url 'PostDetail' post.pk %}">
                         <h2 id="post_title"
                             class="subtitle">{{ post.title }}</h2>
                     </a>
-
-
                     <div id="created_at">Posted at {{ post.created_at}}</div>
-
                     <p id="post_body"> {{ post.body }}</p>
+
+                    <button id="code" type="button" class="btn btn-outline-success">
+                        <div class="visible">
+                            {% if user.is_authenticated %}
+                                <div id ="holding-cell{{post.id}}">
+                                    <div >
+
+                                    </div>
+                                        Click to Reveal Code!
+                                </div>
+                                <script>
+                               $(function (){
+                                    $('#holding-cell{{post.id}}').on('click', function(){
+
+                                        $('#holding-cell{{post.id}}').html('XYZ123ZZZ');
+                                    });
+                                });
+                                </script>
+                            {% else %}
+
+                            <a id="register-for-code" href="{% url 'register' %}">
+                                Register for Code
+
+                                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+                                </script>
+                                <lottie-player id="hr-lottie"
+                                                src="https://assets5.lottiefiles.com/packages/lf20_NzYmoW.json"
+                                               background="transparent"
+                                               speed="2"
+                                                style="height: 75px"
+                                               loop
+                                               autoplay>
+                                </lottie-player>
+                            </a>
+
+
+                            {% endif %}
+                        </div>
+                    </button>
                 </div>
+
             </div>
+
+            <hr class="hr">
             {% endfor %}
         </div>
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
     <head>
@@ -10,6 +11,7 @@
           crossorigin="anonymous">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
@@ -24,9 +26,23 @@
     <body>
 
         <nav id="custom_navbar" class="navbar is-info">
-            <div class="navbar-brand">
-                <a href="/" class="navbar-item"><strong>Wesley's Red Hot Deals & Steals</strong></a>
+
+                <a id="brand-link" href="/" >
+                    <div id="brand">Wesley's Red Hot Deals & Steals</div>
+                </a>
+
+
+            {% if user.is_authenticated %}
+            <div class="container">
+                <li class="col list-item">{{user.username}}<a href="/logout">Logout</a></li>
+            {% else %}
+                 <li class="col list-item"><a href="/login">Login</a></li>
+                 <li class="col list-item"><a href="/register">Register</a></li>
             </div>
+
+            {% endif %}
+
+
         </nav>
 
         <section class="section">
@@ -37,7 +53,27 @@
 
         </section>
 
+    <footer class="container">
+        <div class="row">
+            <p>
+                We are a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed
+                to provide a means for us to earn fees by linking to Amazon.com and affiliated sites.
+                "Product prices and availability are accurate as of the date/time indicated and are subject to change.
+            </p>
 
+            <p>
+                Any price and availability information displayed on Wesley's Amazon Deals & Steals ,
+                at the time of purchase will apply to the purchase of this product. PRICES ARE SUBJECT TO CHANGE,
+                DISCOUNT CODES ARE SUBJECT TO EXPIRATION, LIMITED QTY, CERTAIN RESTRICTIONS MAY APPLY."
+            </p>
+
+            <p>
+                The viewpoints or opinions expressed on this page are that of my own & not of Amazon.com, or any related affiliates.
+            </p>
+
+
+        </div>
+    </footer>
 
     </body>
 </html>

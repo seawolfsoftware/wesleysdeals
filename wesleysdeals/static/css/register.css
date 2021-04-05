@@ -1,0 +1,45 @@
+@media screen and (max-width: 500px) {
+
+
+    #register-container {
+        width: 100%;
+    }
+
+
+
+}
+
+
+#register {
+    font-size: 45px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+#login-link {
+    color: #D15700;
+    font-weight: 700;
+}
+
+#register-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+ul {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+#have-account {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
