@@ -10,22 +10,28 @@
 
 {% block body %}
 
-
-        <div id="post_container" class="container">
+        <div id="posts-container" class="container">
             {% for post in posts %}
-            <div class="row">
-                <div class="post block">
+            <div id="post-row" class="row">
+                <div class="post block col-sm">
                     <a href="{% url 'PostDetail' post.pk %}">
                         <h2 id="post_title"
                             class="subtitle">{{ post.title }}</h2>
                     </a>
-
-
                     <div id="created_at">Posted at {{ post.created_at}}</div>
-
                     <p id="post_body"> {{ post.body }}</p>
+                    <button id="code" type="button" class="btn btn-outline-dark">
+                        <h3 class="visible">
+                            {% if user.is_authenticated %}
+                              XYZ123ZZ963
+                            {% else %}
+                              Register for Code
+                            {% endif %}
+                        </h3>
+                    </button>
                 </div>
             </div>
+            <hr>
             {% endfor %}
         </div>
 
