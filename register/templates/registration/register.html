@@ -20,12 +20,12 @@
 
 
 		<form method="POST" class="form-group">
-		{% csrf_token %}
-		{{ form|crispy }}
-		<button type="submit" class="btn btn-outline-success">Register</button>
+			{% csrf_token %}
+			{{ form|crispy }}
+			<button type="submit" class="btn btn-outline-success">Register</button>
 		</form>
 
-		<p>Have an account? Log in <a id="login-link" href="/login">here</a>.</p>
+		<p id="have-account">Have an account? Log in <a id="login-link" href="/login">here</a>.</p>
 	</div>
 
 {% endblock %}
