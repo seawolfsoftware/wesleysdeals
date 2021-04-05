@@ -20,18 +20,46 @@
                     </a>
                     <div id="created_at">Posted at {{ post.created_at}}</div>
                     <p id="post_body"> {{ post.body }}</p>
-                    <button id="code" type="button" class="btn btn-outline-dark">
-                        <h3 class="visible">
+
+                    <button id="code" type="button" class="btn btn-outline-success">
+                        <div class="visible">
                             {% if user.is_authenticated %}
-                              XYZ123ZZ963
+                                <div id ="holding-cell{{post.id}}">
+                                    <div >
+
+                                    </div>
+                                        Click to Reveal Code!
+                                </div>
+                                <script>
+                               $(function (){
+                                    $('#holding-cell{{post.id}}').on('click', function(){
+
+                                        $('#holding-cell{{post.id}}').html('XYZ123ZZZ');
+                                    });
+                                });
+                                </script>
                             {% else %}
-                              Register for Code
-                            {% endif %}
-                        </h3>
+
+                         Register for Code
+
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+                </script>
+                <lottie-player id="hr-lottie"
+                                src="https://assets5.lottiefiles.com/packages/lf20_NzYmoW.json"
+                               background="transparent"
+                               speed="2"
+                                style="height: 75px"
+                               loop
+                               autoplay>
+                </lottie-player>
+
+                            {% endif %}</div>
                     </button>
                 </div>
+
             </div>
-            <hr>
+
+
             {% endfor %}
         </div>
 
