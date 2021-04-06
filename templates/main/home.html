@@ -10,17 +10,34 @@
 
 {% block body %}
 
+
         <h1 id="headline">Latest Deals & Steals!</h1>
 
-        <div class="container">
+
+        <div id="posts-container" class="container">
+
             {% for post in posts %}
+
             <div id="post-row" class="row">
+
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+                            </script>
+                            <lottie-player id="hr-lottie"
+                                            src="https://assets7.lottiefiles.com/packages/lf20_weql0ssd.json"
+                                           background="transparent"
+                                           speed="2"
+                                            style="height: 75px"
+                                           loop
+                                           autoplay>
+                            </lottie-player>
                 <div class="post block col-sm">
-                    <a href="{% url 'PostDetail' post.pk %}">
-                        <h2 id="post_title"
-                            class="subtitle">{{ post.title }}</h2>
-                    </a>
-                    <div id="created_at">Posted at {{ post.created_at}}</div>
+
+                            <a href="{% url 'PostDetail' post.pk %}">
+                            <h2 id="post_title" class="subtitle">{{ post.title }}</h2></a>
+
+                        <div id="created_at">Posted at {{ post.created_at}}</div>
+
+
 
                     <img id="product-image" src="{{ post.image.url}}"  alt="{{ post.title }}">
 

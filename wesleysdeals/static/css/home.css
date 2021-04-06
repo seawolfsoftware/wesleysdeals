@@ -1,77 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Recursive&family=Yanone+Kaffeesatz&display=swap');
-
-@media screen and (max-width: 500px) {
-
-
-    #post-row {
-        width: 100%;
-    }
-
-}
-
-
-#headline {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-size: 45px;
-    margin-bottom: 45px;
-    font-family: 'Recursive', sans-serif;
-}
-
-
-.hr {
-    margin-left: auto;
-
-    margin-right: auto;
-    margin-top: 35px;
-    margin-bottom: 35px;
-    border: 1px solid green;
-      border-radius: 5px;
-      width: 100%;
-}
-
-#holding-cell {
-    width: 100px;
-    height: 50px;
-}
-
-#code {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#post_title {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-#created_at {
-    margin-bottom: 20px;
-    font-size: 12px;
-    text-align: left;
-}
-
-#post_body {
-    margin-top: 15px;
-    margin-bottom: 25px;
-}
-#posts-container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 60%;
+ #headline {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 5px;
+        font-family: 'Recursive', sans-serif;
 }
 
 #post-row {
-    margin-bottom: 35px;
+    width: 100%;
 }
 
-#register-for-code {
-    color: black;
-
+#posts-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 97%;
 }
 
-#product-image {
-    max-height: 300px;
+@media only screen and (min-width: 768px) {
+    #headline {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-size: 45px;
+        margin-bottom: 45px;
+        font-family: 'Recursive', sans-serif;
+    }
+
+
+    .hr {
+        margin-left: auto;
+
+        margin-right: auto;
+        margin-top: 35px;
+        margin-bottom: 35px;
+        border: 1px solid green;
+          border-radius: 5px;
+          width: 100%;
+    }
+
+    #holding-cell {
+        width: 100px;
+        height: 50px;
+    }
+
+    #code {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #post_title {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    #created_at {
+        margin-bottom: 20px;
+        font-size: 12px;
+        text-align: left;
+    }
+
+    #post_body {
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+    #posts-container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
+
+    #post-row {
+        margin-bottom: 35px;
+    }
+
+    #register-for-code {
+        color: black;
+
+    }
+
+    #product-image {
+        max-height: 300px;
+    }
 }
