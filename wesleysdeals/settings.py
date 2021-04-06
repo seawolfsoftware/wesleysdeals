@@ -146,3 +146,6 @@ EMAIL_USE_SSL = False
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'info@seawolfsoftware.io'
 EMAIL_HOST_PASSWORD = '123god1;'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
