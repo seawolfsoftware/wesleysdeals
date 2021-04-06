@@ -28,18 +28,18 @@
         <nav id="custom_navbar" class="navbar is-info">
 
                 <a id="brand-link" href="/" >
-
                     <div id="brand">Wesley's Red Hot Deals & Steals</div>
                 </a>
 
 
             {% if user.is_authenticated %}
-            <div class="container">
-                <li class="col list-item">{{user.username}}<a href="/logout">Logout</a></li>
-            {% else %}
-                 <li class="col list-item"><a href="/login">Login</a></li>
-                 <li class="col list-item"><a href="/register">Register</a></li>
-            </div>
+
+                    <div class="col list-item">{{user.username}}<a href="/logout">Logout</a></div>
+                {% else %}
+                     <div class="col list-item"><a href="/login">Login</a></div>
+                     <div class="col list-item"><a href="/register">Register</a></div>
+
+
 
             {% endif %}
 

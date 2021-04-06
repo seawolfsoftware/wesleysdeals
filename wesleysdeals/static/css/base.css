@@ -6,18 +6,15 @@
 #brand {
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 20px;
-}
-
-a {
-  color: white;
+    color: white;
 }
 
 
 .list-item {
     display: block;
     list-style-type: none;
-    margin: 10px;
     text-align: right;
+    color: white;
 }
 
 #footer-container {

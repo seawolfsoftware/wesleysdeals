@@ -20,24 +20,33 @@
 
             <div id="post-row" class="row">
 
-                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
-                            </script>
-                            <lottie-player id="hr-lottie"
-                                            src="https://assets7.lottiefiles.com/packages/lf20_weql0ssd.json"
-                                           background="transparent"
-                                           speed="2"
-                                            style="height: 75px"
-                                           loop
-                                           autoplay>
-                            </lottie-player>
+
+
                 <div class="post block col-sm">
 
-                            <a href="{% url 'PostDetail' post.pk %}">
-                            <h2 id="post_title" class="subtitle">{{ post.title }}</h2></a>
+                    <a href="{% url 'PostDetail' post.pk %}">
+                        <h2 id="post_title" class="subtitle">{{ post.title }}</h2>
+                    </a>
 
-                        <div id="created_at">Posted at {{ post.created_at}}</div>
+                    <div id="created_at" class="row justify-content-center">
+                        <div class="col-4">
+                            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+                                </script>
+                                <lottie-player id="hr-lottie"
+                                                src="https://assets6.lottiefiles.com/packages/lf20_mcgv3at1.json"
+                                               background="transparent"
+                                               speed="1"
+                                                style="height: 35px"
+                                               loop
+                                               autoplay>
+                                </lottie-player>
+                        </div>
+                        <div class="col-8" id="created_at_text">
+                            Posted at  {{ post.created_at}}
+                        </div>
 
 
+                    </div>
 
                     <img id="product-image" src="{{ post.image.url}}"  alt="{{ post.title }}">
 
