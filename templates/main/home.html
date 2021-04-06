@@ -21,15 +21,15 @@
                             class="subtitle">{{ post.title }}</h2>
                     </a>
                     <div id="created_at">Posted at {{ post.created_at}}</div>
+
+                    <img id="product-image" src="{{ post.image.url}}"  alt="{{ post.title }}">
+
                     <p id="post_body"> {{ post.body }}</p>
 
                     <button id="code" type="button" class="btn btn-outline-success">
                         <div class="visible">
                             {% if user.is_authenticated %}
                                 <div id ="holding-cell{{post.id}}">
-                                    <div >
-
-                                    </div>
                                         Click to Reveal Code!
                                 </div>
                                 <script>

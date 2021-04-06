@@ -71,3 +71,7 @@
     color: black;
 
 }
+
+#product-image {
+    max-height: 300px;
+}
