@@ -78,6 +78,8 @@
   {
     margin-bottom:30px
   }
+
+
 }
 
 
@@ -95,6 +97,8 @@
   {
     text-align:center
   }
+
+
 }
 
 
@@ -175,6 +179,9 @@
 
 
 
+
+
+
 }
 
 
@@ -232,3 +239,18 @@
     padding-bottom: 450px;
 }
 
+.nav-btn {
+    padding: 15px;
+}
+
+.form-control {
+    width: 30%;
+}
+
+@media (max-width:991px)
+{
+  .form-control {
+    width: 100%;
+    }
+
+}

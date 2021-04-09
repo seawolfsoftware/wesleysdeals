@@ -58,8 +58,19 @@
 
 
                 {% else %}
-                     <div class="col list-item"><a href="/login">Login</a></div>
-                     <div class="col list-item"><a href="/register">Register</a></div>
+
+            <div class="col list-item justify-content-end">
+                <button type="button" class="btn btn-light nav-btn">
+                    <a href="/login">Login</a>
+                </button>
+            </div>
+            <div class="col col-lg-2 list-item justify-content-end">
+                <button type="button" class="btn btn-light nav-btn">
+                    <a href="/register">Register</a>
+                </button>
+
+            </div>
+
 
             {% endif %}
 
