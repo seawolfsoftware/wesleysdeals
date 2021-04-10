@@ -1,27 +1,32 @@
 from django.shortcuts import render, redirect
-from .forms import RegisterForm
+from django.contrib.auth.models import User
 
-from posts.models import Post
+from deals.models import Deal
 
 
 def home(response):
 
-    posts = Post.objects.all()
+    deals = Deal.objects.all()
 
-    if posts:
-        return render(response, "main/home.html", {'posts': posts})
+    if deals:
+        return render(response, "main/home.html", {'deals': deals})
     else:
         return render(response, "main/home.html")
 
 
-def register(response):
-    if response.method == "POST":
-        form = RegisterForm(response.POST)
-        if form.is_valid():
-            form.save()
+def register(request):
+    if request.method == "POST":
 
-        return redirect("/home")
+        username = request.POST['email']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+
+        if password1 == password2:
+            user = User.objects.create_user(username=username, password=password1, email=email)
+            user.save()
+            print('User created')
+
+        return redirect("/")
     else:
-        form = RegisterForm()
-
-    return render(response, "registration/register.html", {"form": form})
+        return render(request, "registration/register.html")

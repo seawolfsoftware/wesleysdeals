@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from .models import Post
+from .models import Deal
 
 
-class PostSerializer(serializers.ModelSerializer):
+class DealSerializer(serializers.ModelSerializer):
 
     class Meta:
         fields = ('id', 'author', 'title', 'body', 'created_at',)
-        model = Post
+        model = Deal

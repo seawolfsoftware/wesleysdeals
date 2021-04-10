@@ -13,19 +13,16 @@
 
         <h1 id="headline">Latest Deals & Steals!</h1>
 
-
         <div id="posts-container" class="container">
 
-            {% for post in posts %}
+            {% for deal in deals %}
 
             <div id="post-row" class="row">
 
-
-
                 <div class="post block col-sm">
 
-                    <a href="{% url 'PostDetail' post.pk %}">
-                        <h2 id="post_title" class="subtitle">{{ post.title }}</h2>
+                    <a href="{% url 'DealDetail' deal.pk %}">
+                        <h2 id="post_title" class="subtitle">{{ deal.title }}</h2>
                     </a>
 
                     <div id="created_at" class="row justify-content-center">
@@ -42,27 +39,27 @@
                                 </lottie-player>
                         </div>
                         <div class="col-8" id="created_at_text">
-                            Posted at  {{ post.created_at}}
+                            Posted at  {{ deal.created_at}}
                         </div>
 
 
                     </div>
 
-                    <img id="product-image" src="{{ post.image.url}}"  alt="{{ post.title }}">
+                    <img id="product-image" src="{{ deal.image.url}}"  alt="{{ deal.title }}">
 
-                    <p id="post_body"> {{ post.body }}</p>
+                    <p id="post_body"> {{ deal.body }}</p>
 
                     <button id="code" type="button" class="btn btn-outline-success">
                         <div class="visible">
                             {% if user.is_authenticated %}
-                                <div id ="holding-cell{{post.id}}">
+                                <div id ="holding-cell{{deal.id}}">
                                         Click to Reveal Code!
                                 </div>
                                 <script>
                                $(function (){
-                                    $('#holding-cell{{post.id}}').on('click', function(){
+                                    $('#holding-cell{{deal.id}}').on('click', function(){
 
-                                        $('#holding-cell{{post.id}}').html('XYZ123ZZZ');
+                                        $('#holding-cell{{deal.id}}').html('{{deal.code.code}}');
                                     });
                                 });
                                 </script>
@@ -71,16 +68,6 @@
                             <a id="register-for-code" href="{% url 'register' %}">
                                 Register for Code
 
-                                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
-                                </script>
-                                <lottie-player id="hr-lottie"
-                                                src="https://assets5.lottiefiles.com/packages/lf20_NzYmoW.json"
-                                               background="transparent"
-                                               speed="2"
-                                                style="height: 75px"
-                                               loop
-                                               autoplay>
-                                </lottie-player>
                             </a>
 
 

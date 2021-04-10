@@ -9,16 +9,14 @@
 {% endblock %}
 
 
-{% load crispy_forms_tags %}
-
 {% block body %}
 <div class="container">
-	<div id="headline">Login</div>
+	<div id="login-header">Login</div>
 
 	<div id="form-container">
 		<form method="post" class="from-group">
 			{% csrf_token %}
-			{{form|crispy}}
+			{{form}}
 			<p id="missing-account">Don't have an account? Create one <a id="register-link" href="/register">here</a>.</p>
 			<button type="submit" class="btn btn-outline-success">Login</button>
 		</form>

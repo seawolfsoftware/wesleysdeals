@@ -27,18 +27,49 @@
 
         <nav id="custom_navbar" class="navbar is-info">
 
-                <a id="brand-link" href="/" >
-                    <div id="brand">Wesley's Red Hot Deals & Steals</div>
-                </a>
+            <div class="container">
+                <div class="row">
+                    <div class="col list-item">
+                         <a id="brand-link" href="/" >
+                            <div id="brand">Wesley's Red Hot Deals & Steals</div>
+                        </a>
+                    </div>
+
+                    <div class="col list-item col-md-auto">
+
+                    </div>
+
+                    {% if user.is_authenticated %}
 
 
-            {% if user.is_authenticated %}
+                        <div class="col col-lg-2 list-item justify-content-end">
+                            {{user.username}}
+                        </div>
 
-                    <div class="col list-item">{{user.username}}<a href="/logout">Logout</a></div>
+                        <div class="col col-lg-2 list-item justify-content-end">
+                            <button type="button" class="btn btn-light">
+                                 <a href="/logout">Logout</a>
+                            </button>
+                        </div>
+
+
+                </div>
+            </div>
+
+
                 {% else %}
-                     <div class="col list-item"><a href="/login">Login</a></div>
-                     <div class="col list-item"><a href="/register">Register</a></div>
 
+            <div class="col list-item justify-content-end">
+                <button type="button" class="btn btn-light nav-btn">
+                    <a href="{% url 'login' %}">Login</a>
+                </button>
+            </div>
+            <div class="col col-lg-2 list-item justify-content-end">
+                <button type="button" class="btn btn-light nav-btn">
+                    <a href="{% url 'register' %}">Register</a>
+                </button>
+
+            </div>
 
 
             {% endif %}
@@ -73,11 +104,11 @@
 
               <p class="text-justify">
                   PRICES ARE SUBJECT TO CHANGE, DISCOUNT CODES ARE
-                    SUBJECT TO EXPIRATION, LIMITED QTY, CERTAIN RESTRICTIONS MAY APPLY."
+                    SUBJECT TO EXPIRATION, LIMITED QTY, CERTAIN RESTRICTIONS MAY APPLY.
               </p><br/>
               <p class="text-justify">
                   The viewpoints or opinions expressed on this page are that of my own & not of Amazon.com, Wal-Mart.com,
-                    Ebay.com,, or any related affiliates.
+                    Ebay.com, or any related affiliates.
               </p>
           </div>
 

@@ -78,7 +78,15 @@
   {
     margin-bottom:30px
   }
+
+
 }
+
+
+
+
+
+
 @media (max-width:767px)
 {
   .site-footer
@@ -89,7 +97,15 @@
   {
     text-align:center
   }
+
+
 }
+
+
+
+
+
+
 .social-icons
 {
   padding-left:0;
@@ -160,6 +176,12 @@
     margin-right:0;
     font-weight:600
   }
+
+
+
+
+
+
 }
 
 
@@ -187,6 +209,7 @@
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 20px;
     color: white;
+    width: 120px;
 }
 
 
@@ -206,12 +229,28 @@
 }
 
 #page-container {
-        position: relative;
-        min-height: 100vh;
-        padding-bottom: 200px;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 200px;
+}
+
+#content-wrap {
+    /* Footer height */
+    padding-bottom: 450px;
+}
+
+.nav-btn {
+    padding: 15px;
+}
+
+.form-control {
+    width: 30%;
+}
+
+@media (max-width:991px)
+{
+  .form-control {
+    width: 100%;
     }
 
-    #content-wrap {
-        /* Footer height */
-        padding-bottom: 450px;
-    }
+}
