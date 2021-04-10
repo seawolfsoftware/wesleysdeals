@@ -8,6 +8,9 @@ from datetime import datetime, timedelta
 class Code(models.Model):
     code = models.TextField()
 
+    def __str__(self):
+        return self.code
+
 
 class Deal(models.Model):
 
