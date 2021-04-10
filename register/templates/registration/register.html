@@ -10,8 +10,6 @@
 
 
 
-{% load crispy_forms_tags %}
-
 {% block body %}
 	<div id="register-container" class="container">
 
@@ -21,7 +19,9 @@
 
 		<form method="POST" class="form-group">
 			{% csrf_token %}
-			{{ form|crispy }}
+			<input type="email" name="email" placeholder="Email address"><br>
+			<input type="password" name="password1" placeholder="Password"><br>
+			<input type="password" name="password2" placeholder="Confirm Password"><br>
 			<button type="submit" class="btn btn-outline-success">Register</button>
 		</form>
 
