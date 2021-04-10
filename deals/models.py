@@ -4,6 +4,10 @@ from django.contrib.auth.models import User, Group, Permission
 from datetime import datetime, timedelta
 
 
+class Code(models.Model):
+    code = models.TextField()
+
+
 class Deal(models.Model):
 
     # ForeignKey is a many-to-one relationship, many deals can be posted by one user
@@ -14,23 +18,27 @@ class Deal(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     image = models.ImageField(upload_to='images/', default='default.jpg')
 
+    # ForeignKey is a many-to-one relationship, many codes can be posted by one deal
+    code = models.ForeignKey(Code, on_delete=models.CASCADE, default=None)
+
     def __str__(self):
         return self.title
 
 
-class MultiUseDeal(Deal):
 
-    # access date time needs to be when the user accesses the deal, not when deal is posted
-
-    access_datetime = models.DateTimeField(default=datetime.now)
-    expiry_datetimestamp = datetime.now() + timedelta(minutes=15)
-    expiry_date = models.DateTimeField(expiry_datetimestamp)
-
-    @property
-    def is_expired(self):
-        if datetime.now > self.expiry_date:
-            return True
-        return False
+# class MultiUseDeal(Deal):
+#
+#     # access date time needs to be when the user accesses the deal, not when deal is posted
+#
+#     access_datetime = models.DateTimeField(default=datetime.now)
+#     expiry_datetimestamp = datetime.now() + timedelta(minutes=15)
+#     expiry_date = models.DateTimeField(expiry_datetimestamp)
+#
+#     @property
+#     def is_expired(self):
+#         if datetime.now > self.expiry_date:
+#             return True
+#         return False
 
     # is max_numbers of requests reached? if not,
     # initiate user into group where max size is max use times
