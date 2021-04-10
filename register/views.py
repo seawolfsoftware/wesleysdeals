@@ -1,15 +1,15 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User, auth
+from django.contrib.auth.models import User
 
-from posts.models import Post
+from deals.models import Deal
 
 
 def home(response):
 
-    posts = Post.objects.all()
+    deals = Deal.objects.all()
 
-    if posts:
-        return render(response, "main/home.html", {'posts': posts})
+    if deals:
+        return render(response, "main/home.html", {'deals': deals})
     else:
         return render(response, "main/home.html")
 
