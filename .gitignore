@@ -1,2 +1,22 @@
-.env
+# Database stuff
+*.sqlite3
+migrations/
+db.sqlite3
+
+
+__pycache__/
+
+
+# Other unwanted stuff
 .idea
+.DS_Store
+.DS_STORE
+
+
+# dotenv
+.env
+
+# virtualenv
+.venv/
+venv/
+ENV/
