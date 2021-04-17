@@ -83,15 +83,15 @@
 
                     <p id="post_body"> {{ deal.body }}</p>
 
-                    <button id="code" type="button" class="btn btn-outline-success">
+
 
                             {% if user.is_authenticated %}
 
 
 
-                            <div id ="holding-cell{{deal.id}}">
+                            <button   type="button" class="btn btn-outline-success" id ="holding-cell{{deal.id}}">
                                         Click to Copy Code!
-                                </div>
+                                </button>
 
 
                                 <script>
@@ -133,7 +133,7 @@
 
                             {% endif %}
 
-                    </button>
+
                 </div>
 
             </div>

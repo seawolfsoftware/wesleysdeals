@@ -194,23 +194,20 @@
 
 
 
-
-
-
-
-
+@media only screen and (min-width: 768px) {
+    #brand {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 20px;
+    color: white;
+    width: 120px;
+    }
+}
 
 
 #custom_navbar {
     background: #D15700;
 }
 
-#brand {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 20px;
-    color: white;
-    width: 120px;
-}
 
 
 .list-item {
