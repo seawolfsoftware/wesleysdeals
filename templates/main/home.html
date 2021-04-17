@@ -11,7 +11,41 @@
 {% block body %}
 
 
-        <h1 id="headline">Latest Deals & Steals!</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+    </script>
+    <lottie-player id="hr-lottie"
+                    src="https://assets8.lottiefiles.com/private_files/lf30_fsljceva.json"
+                   background="transparent"
+                   speed="1"
+                    style="height: 50px"
+                   loop
+                   autoplay>
+    </lottie-player>
+        </div>
+        <div class="col-8"><h1 id="headline">Latest Deals & Steals!</h1></div>
+        <div class="col-2">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+    </script>
+    <lottie-player id="hr-lottie"
+                    src="https://assets8.lottiefiles.com/private_files/lf30_fsljceva.json"
+                   background="transparent"
+                   speed="1"
+                    style="height: 50px"
+                   loop
+                   autoplay>
+    </lottie-player>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
         <div id="posts-container" class="container">
 
@@ -21,9 +55,9 @@
 
                 <div class="post block col-sm">
 
-                    <a href="{% url 'DealDetail' deal.pk %}">
+
                         <h2 id="post_title" class="subtitle">{{ deal.title }}</h2>
-                    </a>
+
 
                     <div id="created_at" class="row justify-content-center">
                         <div class="col-4">
@@ -49,20 +83,46 @@
 
                     <p id="post_body"> {{ deal.body }}</p>
 
-                    <button id="code" type="button" class="btn btn-outline-success">
-                        <div class="visible">
-                            {% if user.is_authenticated %}
-                                <div id ="holding-cell{{deal.id}}">
-                                        Click to Reveal Code!
-                                </div>
-                                <script>
-                               $(function (){
-                                    $('#holding-cell{{deal.id}}').on('click', function(){
 
-                                        $('#holding-cell{{deal.id}}').html('{{deal.code.code}}');
+
+                            {% if user.is_authenticated %}
+
+
+
+                            <button   type="button" class="btn btn-outline-success" id ="holding-cell{{deal.id}}">
+                                        Click to Copy Code!
+                                </button>
+
+
+                                <script>
+                                   $(function (){
+                                        $('#holding-cell{{deal.id}}').on('click', function(){
+
+                                            $('#holding-cell{{deal.id}}').html('{{deal.code.code}}');
+                                        });
+
                                     });
-                                });
+
+
+
+                                function Clipboard_CopyTo(value) {
+                                      var tempInput = document.createElement("input");
+                                      tempInput.value = value;
+                                      document.body.appendChild(tempInput);
+                                      tempInput.select();
+                                      document.execCommand("copy");
+                                      document.body.removeChild(tempInput);
+                                    }
+
+                                    document.querySelector('#holding-cell{{deal.id}}').onclick = function() {
+                                      Clipboard_CopyTo('{{deal.code.code}}');
+                                      alert("Code '{{deal.code.code}}' copied to clipboard!");
+                                    }
+
+
                                 </script>
+
+
                             {% else %}
 
                             <a id="register-for-code" href="{% url 'register' %}">
@@ -72,8 +132,8 @@
 
 
                             {% endif %}
-                        </div>
-                    </button>
+
+
                 </div>
 
             </div>
