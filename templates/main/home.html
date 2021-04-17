@@ -50,19 +50,43 @@
                     <p id="post_body"> {{ deal.body }}</p>
 
                     <button id="code" type="button" class="btn btn-outline-success">
-                        <div class="visible">
+
                             {% if user.is_authenticated %}
-                                <div id ="holding-cell{{deal.id}}">
+
+
+
+                            <div id ="holding-cell{{deal.id}}">
                                         Click to Reveal Code!
                                 </div>
-                                <script>
-                               $(function (){
-                                    $('#holding-cell{{deal.id}}').on('click', function(){
 
-                                        $('#holding-cell{{deal.id}}').html('{{deal.code.code}}');
+
+                                <script>
+                                   $(function (){
+                                        $('#holding-cell{{deal.id}}').on('click', function(){
+
+                                            $('#holding-cell{{deal.id}}').html('{{deal.code.code}}');
+                                        });
+
                                     });
-                                });
+
+
+
+                                function Clipboard_CopyTo(value) {
+                                      var tempInput = document.createElement("input");
+                                      tempInput.value = value;
+                                      document.body.appendChild(tempInput);
+                                      tempInput.select();
+                                      document.execCommand("copy");
+                                      document.body.removeChild(tempInput);
+                                    }
+
+                                    document.querySelector('#holding-cell{{deal.id}}').onclick = function() {
+                                      Clipboard_CopyTo('{{deal.code.code}}');
+                                    }
+
                                 </script>
+
+
                             {% else %}
 
                             <a id="register-for-code" href="{% url 'register' %}">
@@ -72,7 +96,7 @@
 
 
                             {% endif %}
-                        </div>
+
                     </button>
                 </div>
 
