@@ -29,28 +29,27 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col list-item">
+                    <div class="col">
                          <a id="brand-link" href="/" >
                             <div id="brand">Wesley's Red Hot Deals & Steals</div>
                         </a>
                     </div>
 
-                    <div class="col list-item col-md-auto">
-
-                    </div>
-
                     {% if user.is_authenticated %}
 
-
-                        <div class="col col-lg-2 list-item justify-content-end">
+                        <div class="col ">
                             {{user.username}}
                         </div>
 
-                        <div class="col col-lg-2 list-item justify-content-end">
+                        <div class="col">
                             <button type="button" class="btn btn-light">
                                  <a href="/logout">Logout</a>
                             </button>
                         </div>
+
+
+
+
 
 
                 </div>
