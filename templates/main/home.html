@@ -56,7 +56,7 @@
 
 
                             <div id ="holding-cell{{deal.id}}">
-                                        Click to Reveal Code!
+                                        Click to Copy Code!
                                 </div>
 
 
@@ -82,7 +82,9 @@
 
                                     document.querySelector('#holding-cell{{deal.id}}').onclick = function() {
                                       Clipboard_CopyTo('{{deal.code.code}}');
+                                      alert("Code '{{deal.code.code}}' copied to clipboard!");
                                     }
+
 
                                 </script>
 
