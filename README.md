@@ -3,13 +3,15 @@
 
 This website is structured as a single page application. 
 
-The data displayed in the HTML/CSS/JS presentation is served from a Django-driven Python 3.8 back-end.
+The data presented in HTML, CSS, JavaScript is served from a Django-driven Python 3.8 back-end.
 
+## Data models
 Two model objects perform the basic operations: `Posts` and `Codes`. 
 
-A Post has a Code, which may be one-time or multi-use.
-The admin can upload a Code to a Post.
-A Code may or may not be associated with a Post at any given time.
+## How models interact
+- A `Post` has a `Code`, which may be one-time or multi-use.
+- The admin can upload a `Code` to a `Post`.
+- A `Code` may or may not be associated with a `Post` at any given time.
 
 
 ## Python package requirements:
